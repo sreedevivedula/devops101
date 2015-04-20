@@ -9,9 +9,10 @@ Exec {
 
 node 'base' {
 	include bootstrap
+	include puppet
 }
 
-node 'dev' inherits 'base' {
+node 'backend-ubuntu', 'backend-centos' inherits 'base' {
 
 	class { java :
 
@@ -32,4 +33,5 @@ node 'dev' inherits 'base' {
 	->
 
 	class { todo-deploy : }	
+
 }
