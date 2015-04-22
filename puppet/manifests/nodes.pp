@@ -8,30 +8,17 @@ Exec {
 
 
 node 'base' {
+
 	include bootstrap
 	include puppet
+
 }
 
-node 'backend-ubuntu', 'backend-centos' inherits 'base' {
+node 'backend-centos' inherits 'base' {
 
-	class { java :
-
-	} 
-
-	->
-
-	class { apache-tomcat:
-
-	}
-
-	->
-
-	class { apache-tomcat::start :
-
-	}
-
-	->
-
-	class { todo-deploy : }	
+	include java
+	include tomcat::install
+	include tomcat::start
+	include todo-deploy
 
 }

@@ -1,4 +1,4 @@
-class apache-tomcat::start {
+class tomcat::start {
 	
 		exec { "Start Tomcat":
 

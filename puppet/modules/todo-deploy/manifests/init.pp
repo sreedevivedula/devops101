@@ -2,7 +2,7 @@ class todo-deploy {
 
 	common::file_download { "Download TodoBackend":
 	
-		source => "${todo_backend_repo_url}",
+		source => "${todo_backend_app_url}",
 		filename => "${todo_backend}.tar",
 		destination => "${installer_dir}",
 		notify 		=> Exec["Extract TodoBackend"]
@@ -27,7 +27,7 @@ class todo-deploy {
 
 	}
 
-	apache-tomcat::deploy { "Deploy Todo War":
+	tomcat::deploy { "Deploy Todo War":
 
 		war_loc				=> 	"${todo_backend_war_loc}",
 		tomcat_root_dir		=>	"${tomcat}",

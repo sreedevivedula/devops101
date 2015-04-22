@@ -1,10 +1,10 @@
-class apache-tomcat::install {
+class tomcat::install {
 
-	$tomcat_dirname = "apache-tomcat-7.0.53"
+	$tomcat_dirname = "tomcat"
 
-	common::file_download { "Download Tomcat v 7.0.53":
+	common::file_download { "Download Tomcat":
 
-		source 		=> "${apache_tomcat_7_0_53_url}",
+		source 		=> "${tomcat_url}",
 		destination => "${installer_dir}",
 		filename   => "${tomcat_name}",
 		notify 		=> Exec["Extract Tomcat"]
@@ -15,7 +15,7 @@ class apache-tomcat::install {
 
 		command => "tar -zxvf ${installer_dir}/${tomcat_name} -C ${installer_dir}",
 		path 	=> "/bin",
-		require => Common::File_download["Download Tomcat v 7.0.53"]
+		require => Common::File_download["Download Tomcat"]
 
 	}
 	
