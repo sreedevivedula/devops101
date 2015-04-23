@@ -12,7 +12,6 @@ class todo-deploy {
 	exec { 'Extract TodoBackend' : 
 
 		command => "tar -xvf ${installer_dir}/${todo_backend}.tar -C ${installer_dir}",
-		path 	=> "/bin",
 		require => Common::File_download["Download TodoBackend"]
 
 	}
@@ -30,7 +29,6 @@ class todo-deploy {
 	tomcat::deploy { "Deploy Todo War":
 
 		war_loc				=> 	"${todo_backend_war_loc}",
-		tomcat_root_dir		=>	"${tomcat}",
 		war_name			=>	"${todo_backend_war}",
 		require				=> 	[Exec["Package App"], Exec["Start Tomcat"]]
 

@@ -1,20 +1,16 @@
 class tomcat::install {
 
-	$tomcat_dirname = "tomcat"
-
 	common::file_download { "Download Tomcat":
 
 		source 		=> "${tomcat_url}",
-		destination => "${installer_dir}",
-		filename   => "${tomcat_name}",
-		notify 		=> Exec["Extract Tomcat"]
+		destination => "${downloads_dir}",
+		filename	=> "${tomcat_zip_name}"
 
 	}
 	
 	exec { 'Extract Tomcat' : 
 
-		command => "tar -zxvf ${installer_dir}/${tomcat_name} -C ${installer_dir}",
-		path 	=> "/bin",
+		command => "tar -zxvf ${downloads_dir}/${tomcat_zip_name} -C ${installer_dir}",
 		require => Common::File_download["Download Tomcat"]
 
 	}

@@ -1,8 +1,16 @@
 class bootstrap {
 	
-	package { 'wget' :
-		name => 'wget',
+	package { "wget" :
+
+		name => "wget",
 		ensure => present,
+
+	}
+
+	file { "${downloads_dir}":
+
+		ensure => "directory"
+
 	}
 
 }

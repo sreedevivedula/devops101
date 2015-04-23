@@ -1,4 +1,4 @@
-define common::file_download ($source, $destination, $filename="", $options="") {
+define common::file_download ($source, $destination, $filename, $options="") {
 
 	notify {"Downloading from ${source} to ${destination} with ${options} ":}
 
@@ -9,8 +9,7 @@ define common::file_download ($source, $destination, $filename="", $options="") 
 	exec { "Download from ${source}":
 
 		command 	=> "${cmd}",
-		path 		=> "/usr/local/bin:/usr/bin",
-		creates 	=> "${destination}/$filename",	
+		creates 	=> "${destination}/${filename}",	
 		require 	=> Package["wget"]
 
 	}
