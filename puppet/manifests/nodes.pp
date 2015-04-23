@@ -15,7 +15,7 @@ node 'base' {
 
 }
 
-node 'backend-centos' inherits 'base' {
+node 'backend' inherits 'base' {
 
 	include java
 	include tomcat::install
