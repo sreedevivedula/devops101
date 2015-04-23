@@ -4,7 +4,8 @@ class tomcat::install {
 
 		source 		=> "${tomcat_url}",
 		destination => "${downloads_dir}",
-		filename	=> "${tomcat_zip_name}"
+		filename	=> "${tomcat_zip_name}",
+		require		=> File["${downloads_dir}"]
 
 	}
 	
