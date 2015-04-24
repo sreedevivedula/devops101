@@ -1,12 +1,9 @@
-$installer_dir="/opt"
+$installer_dir="/usr/install"
 $file_share_url="http://192.168.33.22:8000/"
 $downloads_dir="/usr/downloads"
 
 # Backend App
-$todo_backend="TodoBackend-Spring"
-$todo_backend_app_url="${file_share_url}/apps/TodoBackend-Spring.tar"
-$todo_backend_app_loc="${$installer_dir}/TodoBackend-Spring"
-$todo_backend_war_loc="${todo_backend_app_loc}/target/libs/todos.war"
+$todo_backend_app_url="${file_share_url}/apps/todos.war"
 $todo_backend_war="todos.war"
 
 # Puppet

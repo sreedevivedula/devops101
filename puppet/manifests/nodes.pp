@@ -18,8 +18,7 @@ node 'base' {
 node 'backend' inherits 'base' {
 
 	include java
-	include tomcat::install
-	include tomcat::start
+	include tomcat
 	include todo-deploy
 
 }

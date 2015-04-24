@@ -7,6 +7,12 @@ class bootstrap {
 
 	}
 
+	file { "${installer_dir}":
+
+		ensure => "directory"
+
+	}
+
 	file { "${downloads_dir}":
 
 		ensure => "directory"

@@ -10,7 +10,7 @@ define common::file_download ($source, $destination, $filename, $options="") {
 
 		command 	=> "${cmd}",
 		creates 	=> "${destination}/${filename}",	
-		require 	=> Package["wget"]
+		require 	=> [Package["wget"], Class["Bootstrap"]]
 
 	}
 
