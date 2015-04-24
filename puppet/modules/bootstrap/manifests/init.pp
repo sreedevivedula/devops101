@@ -1,5 +1,9 @@
 class bootstrap {
 	
+	$installer_dir="/usr/install"
+	$downloads_dir="/usr/downloads"
+
+
 	package { "wget" :
 
 		name => "wget",
