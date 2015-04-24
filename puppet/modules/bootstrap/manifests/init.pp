@@ -13,13 +13,15 @@ class bootstrap {
 
 	file { "${installer_dir}":
 
-		ensure => "directory"
+		path 	=> "${installer_dir}",
+		ensure 	=> "directory"
 
 	}
 
 	file { "${downloads_dir}":
 
-		ensure => "directory"
+		path 	=> "${downloads_dir}",
+		ensure 	=> "directory"
 
 	}
 
