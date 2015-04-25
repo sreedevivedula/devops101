@@ -1,2 +1,2 @@
-include bootstrap
-include puppet
+import 'system_config.pp'
+import 'nodes.pp'
