@@ -15,7 +15,7 @@ node 'base' {
 
 }
 
-node 'backend' inherits 'base' {
+node 'todo' inherits 'base' {
 
 	include java
 	include tomcat

@@ -6,6 +6,11 @@ $downloads_dir="/usr/downloads"
 $todo_backend_app_url="${file_share_url}/apps/todos.war"
 $todo_backend_war="todos.war"
 
+# Frontend App
+$todo_frontend_app_url="${file_share_url}/apps/to-do-list.tar.gz"
+$todo_frontend_app="to-do-list"
+$todo_frontend_zip_name="to-do-list.tar.gz"
+
 # Puppet
 $puppet_loc="/vagrant/puppet"
 $puppet_system_loc="/etc/puppet"
