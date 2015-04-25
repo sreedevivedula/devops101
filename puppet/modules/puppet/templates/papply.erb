@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo puppet apply  <%= @puppet_loc %>/manifests/site.pp --modulepath=<%= @puppet_loc %>/modules:<%= @puppet_system_loc %>/modules $*

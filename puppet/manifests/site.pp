@@ -1,1 +1,2 @@
 include bootstrap
+include puppet
